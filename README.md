@@ -1,0 +1,2 @@
+# Vue.js Twitter feed example
+This is my first Vue.js component i made. It uses a Twitter proxy which is needed due to Twitter' oAuth authentication. This is just for example purposes and isn't at all complete.

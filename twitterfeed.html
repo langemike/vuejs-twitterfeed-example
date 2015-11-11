@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Twitterfeed example</title>
+        <script src="vue.js"></script>
+        <script src="twitterfeed.js"></script>
+    </head>
+
+    <body>
+
+        <div class="twitter-feed" data-q="from:langemike" data-count="2">
+            <div class="twitter-feed__tweet" v-repeat="tweet in tweets">
+                <p>{{{ tweet.text | autoLink }}}</p>
+                <div class="lp-box__footer">
+                    <div class="pull-left"><a target="_blank" href="http://www.twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a></div>
+                    <div class="pull-right">{{tweet.created_at | formatDate}}</div>
+                </div>
+            </div>
+            <div class="twitter-feed__error" v-show="tweets === false">
+                No tweets found.
+            </div>
+        </div>
+
+    </body>
+</html>
